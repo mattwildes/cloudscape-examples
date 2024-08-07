@@ -12,3 +12,11 @@ export interface Item {
   status: StatusIndicatorProps.Type;
   details: number;
 }
+
+export interface Output {
+  itemId: string;
+  name: string;
+  type: string;
+  status: StatusIndicatorProps.Type;
+  details: number;
+}

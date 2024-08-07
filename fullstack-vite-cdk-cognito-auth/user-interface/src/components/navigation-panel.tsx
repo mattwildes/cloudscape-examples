@@ -23,26 +23,26 @@ export default function NavigationPanel() {
       },
       {
         type: "section",
-        text: "Section 1",
-        items: [{ type: "link", text: "Items", href: "/section1" }],
+        text: "Outputs",
+        items: [{ type: "link", text: "Add Outputs", href: "/section1" }],
       },
-      {
-        type: "section",
-        text: "Section 2",
-        items: [
-          { type: "link", text: "Item 1", href: "/section2/item1" },
-          { type: "link", text: "Item 2", href: "/section2/item2" },
-          { type: "link", text: "Item 2", href: "/section2/item3" },
-        ],
-      },
+      // {
+      //   type: "section",
+      //   text: "Section 2",
+      //   items: [
+      //     { type: "link", text: "Item 1", href: "/section2/item1" },
+      //     { type: "link", text: "Item 2", href: "/section2/item2" },
+      //     { type: "link", text: "Item 2", href: "/section2/item3" },
+      //   ],
+      // },
     ];
 
     items.push(
       { type: "divider" },
       {
         type: "link",
-        text: "Documentation",
-        href: "https://gitlab.aws.dev/aws-emea-prototyping/modern-application-development/user-experience-frontend/cloudscape",
+        text: "AWS Elemental MediaConnect",
+        href: "https://docs.aws.amazon.com/mediaconnect/latest/ug/what-is.html",
         external: true,
       }
     );

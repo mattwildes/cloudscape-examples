@@ -37,6 +37,7 @@ export class InfrastructureStack extends cdk.Stack {
 
     const userPool = new cognito.UserPool(this, "UserPool", {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
+      userPoolName: "MediaManagerUserPool",
       selfSignUpEnabled: false,
       autoVerify: { email: true, phone: true },
       signInAliases: {
@@ -57,6 +58,7 @@ export class InfrastructureStack extends cdk.Stack {
       this,
       "IdentityPool",
       {
+        identityPoolName: "MediaManagerIdentityPool",
         authenticationProviders: {
           userPools: [
             new cognitoIdentityPool.UserPoolAuthenticationProvider({

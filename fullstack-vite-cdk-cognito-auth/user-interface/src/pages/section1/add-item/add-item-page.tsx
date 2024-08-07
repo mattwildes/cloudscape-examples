@@ -62,7 +62,14 @@ export default function AddItemPage() {
     setSubmitting(true);
 
     const apiClient = new ApiClient();
-    const result = await apiClient.items.addItem({
+    // const result = await apiClient.items.addItem({
+    //   name: data.name.trim(),
+    //   status: data.status,
+    //   type: data.type,
+    //   details: data.details,
+    // });
+
+    const result = await apiClient.outputs.addOutput({
       name: data.name.trim(),
       status: data.status,
       type: data.type,

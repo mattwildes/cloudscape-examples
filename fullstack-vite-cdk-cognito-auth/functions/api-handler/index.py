@@ -15,6 +15,7 @@ from aws_lambda_powertools.event_handler import (
 from utils import CustomEncoder
 from routes.health import router as health_router
 from routes.items import router as items_router
+from routes.outputs import router as outputs_router
 
 tracer = Tracer()
 logger = Logger()
@@ -30,6 +31,7 @@ app = APIGatewayRestResolver(
 
 app.include_router(health_router)
 app.include_router(items_router)
+app.include_router(outputs_router)
 
 
 @app.exception_handler(ClientError)
