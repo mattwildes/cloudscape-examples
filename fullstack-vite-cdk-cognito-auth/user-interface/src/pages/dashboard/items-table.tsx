@@ -56,7 +56,8 @@ export default function ItemsTable() {
   useEffect(() => {
     (async () => {
       const apiClient = new ApiClient();
-      const items = await apiClient.items.getItems();
+      // const items = await apiClient.items.getItems();
+      const items = await apiClient.flows.getFlows();
       setItems(items);
       setLoading(false);
     })();
