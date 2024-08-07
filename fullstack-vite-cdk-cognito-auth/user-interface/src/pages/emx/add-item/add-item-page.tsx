@@ -80,6 +80,10 @@ export default function AddItemPage() {
       type: data.type,
       details: data.details,
       port: data.port,
+      Name: "",
+      Status: "",
+      Description: "",
+      AvailabilityZone: ""
     });
 
     if (result) {
