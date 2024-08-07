@@ -21,6 +21,7 @@ import { Utils } from "../../../common/utils";
 import { ApiClient } from "../../../common/api-client/api-client";
 import { Item } from "../../../common/types";
 
+
 export default function ViewItemPage() {
   const onFollow = useOnFollow();
   const navigate = useNavigate();
@@ -155,6 +156,8 @@ export default function ViewItemPage() {
                       copyButtonAriaLabel="Copy ARN"
                       textToCopy={item?.Source.SourceArn ?? "loading..."}
                       variant="inline"
+                      copySuccessText={"Success"}
+                      copyErrorText={"Error"}                      
                       />
                       </div>
                   <div>

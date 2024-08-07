@@ -16,6 +16,22 @@ export interface Item {
   Description: string;
   AvailabilityZone: string;
   port: string;
+  EgressIp: string;
+  FlowArn: string;
+  Entitlements: string;
+  Source: {
+    Name: string;
+    Type: string;
+    IngestIp: string;
+    IngestPort: string;
+    WhitelistCidr: string;
+    SourceArn: string;
+    Transport: {
+      Protocol: string;
+      MaxBitrate: string;
+    };
+  };
+  
 }
 
 export interface Output {
@@ -26,3 +42,4 @@ export interface Output {
   details: number;
   port: string;
 }
+
