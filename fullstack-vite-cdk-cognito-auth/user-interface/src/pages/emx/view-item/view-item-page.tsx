@@ -117,9 +117,11 @@ export default function ViewItemPage() {
                     <Box variant="awsui-key-label">FlowArn</Box>
                     <div>
                     <CopyToClipboard
-                      copyButtonAriaLabel="Copy ARN"
-                      textToCopy={item?.FlowArn ?? "loading..."}
-                      variant="inline"
+                        copyButtonAriaLabel="Copy ARN"
+                        textToCopy={item?.FlowArn ?? "loading..."}
+                        variant="inline"
+                        copySuccessText={"Success"}
+                        copyErrorText={"Error"}
                       />
                       </div>
                   </div>

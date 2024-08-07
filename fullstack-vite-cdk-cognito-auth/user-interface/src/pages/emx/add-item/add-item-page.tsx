@@ -30,7 +30,22 @@ const defaults: Omit<Item, "itemId"> = {
   Name: "",
   Status: "",
   Description: "",
-  AvailabilityZone: ""
+  AvailabilityZone: "",
+  EgressIp: "",
+  FlowArn: "",
+  Entitlements: "",
+  Source: {
+    Name: "",
+    Type: "",
+    IngestIp: "",
+    IngestPort: "",
+    WhitelistCidr: "",
+    SourceArn: "",
+    Transport: {
+      Protocol: "",
+      MaxBitrate: ""
+    }
+  }
 };
 
 export default function AddItemPage() {
@@ -83,7 +98,22 @@ export default function AddItemPage() {
       Name: "",
       Status: "",
       Description: "",
-      AvailabilityZone: ""
+      AvailabilityZone: "",
+      EgressIp: "",
+      FlowArn: "",
+      Entitlements: "",
+      Source: {
+        Name: "",
+        Type: "",
+        IngestIp: "",
+        IngestPort: "",
+        WhitelistCidr: "",
+        SourceArn: "",
+        Transport: {
+          Protocol: "",
+          MaxBitrate: ""
+        }
+      }
     });
 
     if (result) {
