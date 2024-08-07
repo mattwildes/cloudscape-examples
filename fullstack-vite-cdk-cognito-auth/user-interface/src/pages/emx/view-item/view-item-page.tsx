@@ -4,6 +4,7 @@ import {
   ColumnLayout,
   Container,
   ContentLayout,
+  CopyToClipboard,
   Header,
   SpaceBetween,
   StatusIndicator,
@@ -100,64 +101,65 @@ export default function ViewItemPage() {
               <ColumnLayout columns={3} variant="text-grid">
                 <SpaceBetween size="l">
                   <div>
-                    <Box variant="awsui-key-label">Item Id</Box>
-                    <div>{item?.Name ?? "loading..."}</div>
-                  </div>
-                  <div>
-                    <Box variant="awsui-key-label">Engine</Box>
-                    <div>Test Data</div>
-                  </div>
-                  <div>
                     <Box variant="awsui-key-label">Name</Box>
                     <div>{item?.Name ?? "loading..."}</div>
                   </div>
                   <div>
-                    <Box variant="awsui-key-label">Languages</Box>
-                    <div>en</div>
+                    <Box variant="awsui-key-label">Availability Zone</Box>
+                    <div>{item?.AvailabilityZone ?? "loading..."}</div>
                   </div>
                   <div>
-                    <Box variant="awsui-key-label">Status</Box>
+                    <Box variant="awsui-key-label">EgressIp</Box>
+                    <div>{item?.EgressIp ?? "loading..."}</div>
+                  </div>
+                  <div>
+                    <Box variant="awsui-key-label">FlowArn</Box>
                     <div>
-                      <StatusIndicator type={item?.status ?? "loading"}>
-                        In progress
-                      </StatusIndicator>
-                    </div>
+                    <CopyToClipboard
+                      copyButtonAriaLabel="Copy ARN"
+                      textToCopy={item?.FlowArn ?? "loading..."}
+                      variant="inline"
+                      />
+                      </div>
                   </div>
                 </SpaceBetween>
                 <SpaceBetween size="l">
                   <div>
-                    <Box variant="awsui-key-label">Provider</Box>
-                    <div>AWS</div>
+                    <Box variant="awsui-key-label">Source Name</Box>
+                    <div>{item?.Source.Name ?? "loading..."}</div>                  </div>
+                  <div>
+                    <Box variant="awsui-key-label">Source Whitelist CIDR</Box>
+                    <div>{item?.Source.WhitelistCidr ?? "loading..."}</div>
                   </div>
                   <div>
-                    <Box variant="awsui-key-label">Model</Box>
-                    <div>Titan</div>
+                    <Box variant="awsui-key-label">Source Protocol</Box>
+                    <div>{item?.Source.Transport.Protocol ?? "loading..."}</div>
                   </div>
                   <div>
-                    <Box variant="awsui-key-label">Dimensions</Box>
-                    <div>1024</div>
-                  </div>
-                  <div>
-                    <Box variant="awsui-key-label">Chunk size</Box>
-                    <div>512</div>
-                  </div>
-                  <div>
-                    <Box variant="awsui-key-label">Overlap</Box>
-                    <div>128</div>
+                    <Box variant="awsui-key-label">Source Max Bitrate</Box>
+                    <div>{item?.Source.Transport.MaxBitrate ?? "loading..."}</div>
                   </div>
                 </SpaceBetween>
                 <SpaceBetween size="l">
-                  <div>
-                    <Box variant="awsui-key-label">Metric</Box>
-                    <div>positive</div>
+                <div>
+                    <Box variant="awsui-key-label">Souce Ingest IP</Box>
+                    <div>{item?.Source.IngestIp ?? "loading..."}</div>
                   </div>
                   <div>
-                    <Box variant="awsui-key-label">Indexing</Box>
-                    <div>yes</div>
+                    <Box variant="awsui-key-label">Souce Ingest Port</Box>
+                    <div>{item?.Source.IngestPort ?? "loading..."}</div>
                   </div>
                   <div>
-                    <Box variant="awsui-key-label">Hybrid</Box>
-                    <div>no</div>
+                    <Box variant="awsui-key-label">Source ARN</Box>
+                    <CopyToClipboard
+                      copyButtonAriaLabel="Copy ARN"
+                      textToCopy={item?.Source.SourceArn ?? "loading..."}
+                      variant="inline"
+                      />
+                      </div>
+                  <div>
+                    <Box variant="awsui-key-label">Entitlements</Box>
+                    <div>{item?.Entitlements ?? "loading..."}</div>
                   </div>
                 </SpaceBetween>
               </ColumnLayout>
