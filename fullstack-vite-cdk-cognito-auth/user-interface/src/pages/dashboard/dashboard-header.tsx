@@ -8,13 +8,13 @@ export default function DashboardHeader() {
       variant="h1"
       actions={
         <SpaceBetween direction="horizontal" size="xs">
-          <RouterButton href="/section1">View Items</RouterButton>
+          <RouterButton href="/emx">View Flows</RouterButton>
           <RouterButtonDropdown
             items={[
               {
                 id: "add-data",
                 text: "Add Item",
-                href: "/section1/add",
+                href: "/emx/add",
               },
             ]}
           >

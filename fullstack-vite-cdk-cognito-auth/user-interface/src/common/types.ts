@@ -11,6 +11,7 @@ export interface Item {
   type: string;
   status: StatusIndicatorProps.Type;
   details: number;
+  port: string;
 }
 
 export interface Output {
@@ -19,4 +20,5 @@ export interface Output {
   type: string;
   status: StatusIndicatorProps.Type;
   details: number;
+  port: string;
 }

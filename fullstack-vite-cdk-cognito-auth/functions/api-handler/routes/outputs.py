@@ -20,6 +20,7 @@ class CreateItemRequest(BaseModel):
     type: str
     status: str
     details: int
+    port: int
 
 
 @router.get("/items")
@@ -82,7 +83,7 @@ def create_item():
                     "0.0.0.0/0"
                 ],
         "MinLatency": 400,
-        "Port": 10000
+        "Port": generic_request.port
     }
 
     response = mediaconnect.add_flow_outputs(

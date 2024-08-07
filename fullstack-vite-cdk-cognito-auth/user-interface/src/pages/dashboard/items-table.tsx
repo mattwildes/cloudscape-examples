@@ -19,32 +19,38 @@ const ItemsColumnDefinitions: TableProps.ColumnDefinition<Item>[] = [
     header: "Name",
     sortingField: "name",
     cell: (item) => (
-      <RouterLink href={`/section1/items/${item.itemId}`}>
-        {item.name}
+      <RouterLink href={`/emx/items/${item.itemId}`}>
+        {item.Name}
       </RouterLink>
     ),
     isRowHeader: true,
   },
-  {
-    id: "type",
-    header: "Type",
-    sortingField: "type",
-    cell: (item) => item.type,
-  },
+  // {
+  //   id: "type",
+  //   header: "Type",
+  //   sortingField: "type",
+  //   cell: (item) => item.type,
+  // },
   {
     id: "starus",
     header: "Status",
     sortingField: "status",
     cell: (item) => (
-      <StatusIndicator type={item.status}>{item.status}</StatusIndicator>
+      <StatusIndicator type={item.Status}>{item.Status}</StatusIndicator>
     ),
     minWidth: 120,
   },
   {
-    id: "details",
-    header: "Details",
-    sortingField: "details",
-    cell: (item) => item.details,
+    id: "description",
+    header: "Description",
+    sortingField: "description",
+    cell: (item) => item.Description,
+  },
+  {
+    id: "availabilityzone",
+    header: "Availability Zone",
+    sortingField: "availabilityzone",
+    cell: (item) => item.AvailabilityZone,
   },
 ];
 
@@ -58,6 +64,7 @@ export default function ItemsTable() {
       const apiClient = new ApiClient();
       // const items = await apiClient.items.getItems();
       const items = await apiClient.flows.getFlows();
+      console.log(items);
       setItems(items);
       setLoading(false);
     })();
@@ -77,7 +84,7 @@ export default function ItemsTable() {
                 Item is a thing that is used to do something.
               </Box>
             </div>
-            <RouterButton href="/section1/add">Add Item</RouterButton>
+            <RouterButton href="/emx/add">Add Item</RouterButton>
           </SpaceBetween>
         </Box>
       }
@@ -98,13 +105,13 @@ export default function ItemsTable() {
             <SpaceBetween direction="horizontal" size="xs">
               <RouterButton
                 disabled={selectedItems.length !== 1}
-                href={`/section1/items/${
+                href={`/emx/items/${
                   selectedItems.length > 0 ? selectedItems[0].itemId : ""
                 }`}
               >
                 View
               </RouterButton>
-              <RouterButton href="/section1/add">Add Item</RouterButton>
+              <RouterButton href="/emx/add">Add Output</RouterButton>
             </SpaceBetween>
           }
         >
@@ -113,7 +120,7 @@ export default function ItemsTable() {
       }
       footer={
         <Box textAlign="center">
-          <RouterLink href="/section1">View all Items</RouterLink>
+          <RouterLink href="/emx">View all Items</RouterLink>
         </Box>
       }
     />

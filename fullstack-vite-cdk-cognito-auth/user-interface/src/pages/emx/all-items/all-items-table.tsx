@@ -27,8 +27,8 @@ const ItemsColumnDefinitions: TableProps.ColumnDefinition<Item>[] = [
     header: "Name",
     sortingField: "name",
     cell: (item) => (
-      <RouterLink href={`/section1/items/${item.itemId}`}>
-        {item.name}
+      <RouterLink href={`/emx/items/${item.itemId}`}>
+        {item.Name}
       </RouterLink>
     ),
     isRowHeader: true,
@@ -44,7 +44,7 @@ const ItemsColumnDefinitions: TableProps.ColumnDefinition<Item>[] = [
     header: "Status",
     sortingField: "status",
     cell: (item) => (
-      <StatusIndicator type={item.status}>{item.status}</StatusIndicator>
+      <StatusIndicator type={item.Status}>{item.Status}</StatusIndicator>
     ),
     minWidth: 120,
   },
@@ -140,7 +140,8 @@ export default function AllItemsTable() {
   useEffect(() => {
     (async () => {
       const apiClient = new ApiClient();
-      const items = await apiClient.items.getItems();
+      // const items = await apiClient.items.getItems();
+      const items = await apiClient.flows.getFlows();
       setData(items);
       setLoading(false);
     })();
@@ -149,7 +150,8 @@ export default function AllItemsTable() {
   const refresh = useCallback(async () => {
     setLoading(true);
     const apiClient = new ApiClient();
-    const items = await apiClient.items.getItems();
+    // const items = await apiClient.items.getItems();
+    const items = await apiClient.flows.getFlows();
     setData(items);
     setLoading(false);
   }, []);

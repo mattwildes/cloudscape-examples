@@ -19,7 +19,7 @@ export default function AllItemsPage() {
             },
             {
               text: "Items",
-              href: "/section1",
+              href: "/emx",
             },
           ]}
         />

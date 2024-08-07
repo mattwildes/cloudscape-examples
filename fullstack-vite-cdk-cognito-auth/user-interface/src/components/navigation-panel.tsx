@@ -23,8 +23,11 @@ export default function NavigationPanel() {
       },
       {
         type: "section",
-        text: "Outputs",
-        items: [{ type: "link", text: "Add Outputs", href: "/section1" }],
+        text: "AWS Elemental MediaConnect",
+        items: [
+              { type: "link", text: "View Flows", href: "/emx" },
+              { type: "link", text: "Add Outputs", href: "/emx/add" },
+            ],
       },
       // {
       //   type: "section",

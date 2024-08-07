@@ -74,10 +74,11 @@ export default function AddItemPage() {
       status: data.status,
       type: data.type,
       details: data.details,
+      port: data.port,
     });
 
     if (result) {
-      navigate("/section1");
+      navigate("/emx");
       return;
     }
 
@@ -97,11 +98,11 @@ export default function AddItemPage() {
             },
             {
               text: "Items",
-              href: "/section1",
+              href: "/emx",
             },
             {
-              text: "Add Item",
-              href: "/section1/add",
+              text: "Add Output",
+              href: "/emx/add",
             },
           ]}
           expandAriaLabel="Show path"
@@ -111,8 +112,8 @@ export default function AddItemPage() {
       content={
         <ContentLayout
           header={
-            <Header variant="h1" description="Add a new item to the list">
-              Add Item
+            <Header variant="h1" description="Add a new output to the MediaConnect Flow">
+              Add Output
             </Header>
           }
         >
@@ -120,7 +121,7 @@ export default function AddItemPage() {
             <Form
               actions={
                 <SpaceBetween direction="horizontal" size="xs">
-                  <RouterButton variant="link" href="/section1">
+                  <RouterButton variant="link" href="/emx">
                     Cancel
                   </RouterButton>
                   <Button
@@ -129,23 +130,33 @@ export default function AddItemPage() {
                     onClick={submitForm}
                     disabled={submitting}
                   >
-                    Add Item
+                    Add Output
                   </Button>
                 </SpaceBetween>
               }
               errorText={globalError}
             >
               <Container
-                header={<Header variant="h2">Item Configuration</Header>}
+                header={<Header variant="h2">Output Configuration</Header>}
               >
                 <SpaceBetween size="l">
                   <FormField label="Name" errorText={errors.name}>
                     <Input
-                      placeholder="My Item"
+                      placeholder="Output Name"
                       disabled={submitting}
                       value={data.name}
                       onChange={({ detail: { value } }) =>
                         onChange({ name: value })
+                      }
+                    />
+                  </FormField>
+                  <FormField label="Port" errorText={errors.port}>
+                    <Input
+                      placeholder="2000 - 3000"
+                      disabled={submitting}
+                      value={data.port}
+                      onChange={({ detail: { value } }) =>
+                        onChange({ port: value })
                       }
                     />
                   </FormField>

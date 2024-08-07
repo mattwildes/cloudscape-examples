@@ -62,11 +62,11 @@ export default function ViewItemPage() {
             },
             {
               text: "Items",
-              href: "/section1",
+              href: "/emx",
             },
             {
               text: item?.name || "",
-              href: `/section1/items/${itemId}`,
+              href: `/emx/items/${itemId}`,
             },
           ]}
         />

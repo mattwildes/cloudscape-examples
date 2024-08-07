@@ -57,7 +57,7 @@ export function AllItemsPageHeader({
               data-testid="header-btn-view-details"
               disabled={props.selectedItems.length !== 1}
               onClick={() =>
-                navigate(`/section1/items/${props.selectedItems[0].itemId}`)
+                navigate(`/emx/items/${props.selectedItems[0].itemId}`)
               }
             >
               View
@@ -72,7 +72,7 @@ export function AllItemsPageHeader({
             <RouterButton
               data-testid="header-btn-create"
               variant="primary"
-              href="/section1/add"
+              href="/emx/add"
             >
               Add Item
             </RouterButton>
