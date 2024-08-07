@@ -41,7 +41,7 @@ export default function NavigationPanel() {
     ];
 
     items.push(
-      { type: "divider" },
+      { type: "divider"},
       {
         type: "link",
         text: "AWS Elemental MediaConnect",

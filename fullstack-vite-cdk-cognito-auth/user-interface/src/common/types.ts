@@ -8,9 +8,13 @@ export interface NavigationPanelState {
 export interface Item {
   itemId: string;
   name: string;
+  Name: string;
   type: string;
   status: StatusIndicatorProps.Type;
+  Status: string;
   details: number;
+  Description: string;
+  AvailabilityZone: string;
   port: string;
 }
 

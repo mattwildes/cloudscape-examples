@@ -26,6 +26,7 @@ const defaults: Omit<Item, "itemId"> = {
   status: "success",
   type: "Items",
   details: 0,
+  port: "",
 };
 
 export default function AddItemPage() {
