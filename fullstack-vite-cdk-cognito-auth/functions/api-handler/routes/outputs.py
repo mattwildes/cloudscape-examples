@@ -23,20 +23,20 @@ class CreateItemRequest(BaseModel):
     port: int
 
 
-@router.get("/items")
-@tracer.capture_method
-def items():
-    # table = dynamodb.Table(ITEMS_TABLE_NAME)
-    items = []
+# @router.get("/items")
+# @tracer.capture_method
+# def items():
+#     # table = dynamodb.Table(ITEMS_TABLE_NAME)
+#     items = []
     
-    response = mediaconnect.list_flows()
+#     response = mediaconnect.list_flows()
     
-    items.extend(response['Flows'])
+#     items.extend(response['Flows'])
 
-    while 'NextToken' in response:
-                next_token = response['NextToken']
-                response = mediaconnect.list_flows(NextToken=next_token)
-                items.extend(response['Flows'])
+#     while 'NextToken' in response:
+#                 next_token = response['NextToken']
+#                 response = mediaconnect.list_flows(NextToken=next_token)
+#                 items.extend(response['Flows'])
 
     # return flows
 
