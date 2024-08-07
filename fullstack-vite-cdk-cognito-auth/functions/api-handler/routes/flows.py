@@ -48,7 +48,7 @@ def flows():
     return {"ok": True, "data": flows}
 
 
-@router.get("/flows/{flow_name}")
+@router.get("/flows/<flow_name>")
 @tracer.capture_method
 def get_flow(flow_name: str):
 
