@@ -43,9 +43,7 @@ const ItemsColumnDefinitions: TableProps.ColumnDefinition<Item>[] = [
     id: "starus",
     header: "Status",
     sortingField: "status",
-    cell: (item) => (
-      <StatusIndicator type={item.Status}>{item.Status}</StatusIndicator>
-    ),
+    cell: (item) => item.Status,
     minWidth: 120,
   },
   {

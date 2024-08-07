@@ -27,6 +27,10 @@ const defaults: Omit<Item, "itemId"> = {
   type: "Items",
   details: 0,
   port: "",
+  Name: "",
+  Status: "",
+  Description: "",
+  AvailabilityZone: ""
 };
 
 export default function AddItemPage() {
