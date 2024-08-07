@@ -134,7 +134,6 @@ export class InfrastructureStack extends cdk.Stack {
           "Authorization",
           "X-Amz-Date",
           "X-Amz-Security-Token",
-          "Access-Control-Allow-Origin",
         ],
         maxAge: cdk.Duration.minutes(10),
       },
