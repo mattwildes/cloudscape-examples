@@ -206,6 +206,7 @@ export class InfrastructureStack extends cdk.Stack {
                     "x-forwarded-user",
                     "Access-Control-Request-Headers",
                     "Access-Control-Request-Method",
+                    "Access-Control-Allow-Origin",
                   ],
                 },
               },

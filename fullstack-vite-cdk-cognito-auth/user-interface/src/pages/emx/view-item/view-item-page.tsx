@@ -38,7 +38,7 @@ export default function ViewItemPage() {
 
 
     console.log("result", result);
-    
+
     if (!result) {
       navigate("/rag/workspaces");
       return;
@@ -109,7 +109,7 @@ export default function ViewItemPage() {
                   </div>
                   <div>
                     <Box variant="awsui-key-label">Name</Box>
-                    <div>{item?.name ?? "loading..."}</div>
+                    <div>{item?.Name ?? "loading..."}</div>
                   </div>
                   <div>
                     <Box variant="awsui-key-label">Languages</Box>
