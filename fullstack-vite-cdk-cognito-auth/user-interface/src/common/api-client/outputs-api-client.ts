@@ -8,7 +8,7 @@ export class OutputsApiClient extends ApiClientBase {
     const headers = await this.getHeaders();
     const restOperation = get({
       apiName: API_NAME,
-      path: "/items",
+      path: "/outputs",
       options: {
         headers,
       },
@@ -34,6 +34,7 @@ export class OutputsApiClient extends ApiClientBase {
     });
 
     const response = await restOperation.response;
+    console.log(response);
     const data = (await response.body.json()) as any;
 
     return data.ok;
@@ -43,7 +44,7 @@ export class OutputsApiClient extends ApiClientBase {
     const headers = await this.getHeaders();
     const restOperation = get({
       apiName: API_NAME,
-      path: `/items/${id}`,
+      path: `/outputs/${id}`,
       options: {
         headers,
       },
@@ -59,7 +60,7 @@ export class OutputsApiClient extends ApiClientBase {
     const headers = await this.getHeaders();
     const restOperation = del({
       apiName: API_NAME,
-      path: `/items/${id}`,
+      path: `/outputs/${id}`,
       options: {
         headers,
       },

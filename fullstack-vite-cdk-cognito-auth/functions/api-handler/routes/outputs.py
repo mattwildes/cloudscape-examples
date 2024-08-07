@@ -63,12 +63,14 @@ def create_item():
     # table = dynamodb.Table(ITEMS_TABLE_NAME)
     flow_arn = "arn:aws:mediaconnect:us-east-1:998919890118:flow:1-VA5cDwJbWV9TVVQM-c9d6709ac31e:wildesmj-org-cloudscape-emx-01"
     output_details = {
-        "Name": "MyOutput",
-        "Description": "My MediaConnect output",
-        "Destination": "192.0.2.12",
-        "Port": 5000,
-        "Protocol": "rtp-fec",
-        "SmoothingLatency": 100
+        "Name": generic_request.name,
+        "Description": "output-sample-srt-listener-standard-description",
+        "Protocol": "srt-listener",
+        "CidrAllowList": [
+                    "0.0.0.0/0"
+                ],
+        "MinLatency": 400,
+        "Port": 10000
     }
 
     response = mediaconnect.add_flow_outputs(
