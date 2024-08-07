@@ -48,39 +48,39 @@ def flows():
     return {"ok": True, "data": flows}
 
 
-@router.get("/flows/<item_id>")
-@tracer.capture_method
-def get_flow(item_id: str):
-    # table = dynamodb.Table(ITEMS_TABLE_NAME)
+# @router.get("/flows/<item_id>")
+# @tracer.capture_method
+# def get_flow(item_id: str):
+#     # table = dynamodb.Table(ITEMS_TABLE_NAME)
 
-    # response = table.get_item(
-    #     Key={
-    #         "itemId": item_id,
-    #     }
-    # )
+#     # response = table.get_item(
+#     #     Key={
+#     #         "itemId": item_id,
+#     #     }
+#     # )
 
-    # item = response.get('Item', None)
+#     # item = response.get('Item', None)
 
-    # return {"ok": True, "data": flow}
+#     # return {"ok": True, "data": flow}
 
-    response = mediaconnect.list_flows()
-    flows = response['Flows']
+#     response = mediaconnect.list_flows()
+#     flows = response['Flows']
 
-    while 'NextToken' in response:
-            next_token = response['NextToken']
-            response = mediaconnect.list_flows(NextToken=next_token)
-            flows.extend(response['Flows'])
+#     while 'NextToken' in response:
+#             next_token = response['NextToken']
+#             response = mediaconnect.list_flows(NextToken=next_token)
+#             flows.extend(response['Flows'])
 
-    for flow in flows:
-    if flow['Name'] == item_id:
-        # Describe the flow
-        flow_arn = flow['FlowArn']
-        response = mediaconnect.describe_flow(FlowArn=flow_arn)
-        return response['Flow']
+#     for flow in flows:
+#     if flow['Name'] == item_id:
+#         # Describe the flow
+#         flow_arn = flow['FlowArn']
+#         response = mediaconnect.describe_flow(FlowArn=flow_arn)
+#         return response['Flow']
 
-    # If the flow is not found, return None
-    print(f"Flow with name '{flow_name}' not found.")
-    return None
+#     # If the flow is not found, return None
+#     print(f"Flow with name '{flow_name}' not found.")
+#     return None
 
 
 
