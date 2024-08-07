@@ -36,6 +36,9 @@ export default function ViewItemPage() {
     const apiClient = new ApiClient();
     const result = await apiClient.flows.getFlow(Name);
 
+
+    console.log("result", result);
+    
     if (!result) {
       navigate("/rag/workspaces");
       return;
