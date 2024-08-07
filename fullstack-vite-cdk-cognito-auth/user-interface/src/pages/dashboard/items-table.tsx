@@ -19,7 +19,7 @@ const ItemsColumnDefinitions: TableProps.ColumnDefinition<Item>[] = [
     header: "Name",
     sortingField: "name",
     cell: (item) => (
-      <RouterLink href={`/emx/items/${item.itemId}`}>
+      <RouterLink href={`/emx/flows/${item.Name}`}>
         {item.Name}
       </RouterLink>
     ),

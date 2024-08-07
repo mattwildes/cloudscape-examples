@@ -23,7 +23,7 @@ import { Item } from "../../../common/types";
 export default function ViewItemPage() {
   const onFollow = useOnFollow();
   const navigate = useNavigate();
-  const { itemId } = useParams();
+  const { Name } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState<Item | null>(null);
@@ -31,10 +31,10 @@ export default function ViewItemPage() {
   const [value, setValue] = useState("");
 
   const getItem = useCallback(async () => {
-    if (!itemId) return;
+    if (!Name) return;
 
     const apiClient = new ApiClient();
-    const result = await apiClient.items.getItem(itemId);
+    const result = await apiClient.flows.getFlow(Name);
 
     if (!result) {
       navigate("/rag/workspaces");
@@ -43,7 +43,7 @@ export default function ViewItemPage() {
 
     setItem(result);
     setLoading(false);
-  }, [navigate, itemId]);
+  }, [navigate, Name]);
 
   useEffect(() => {
     getItem();
@@ -66,7 +66,7 @@ export default function ViewItemPage() {
             },
             {
               text: item?.name || "",
-              href: `/emx/items/${itemId}`,
+              href: `/emx/items/${Name}`,
             },
           ]}
         />
@@ -98,7 +98,7 @@ export default function ViewItemPage() {
                 <SpaceBetween size="l">
                   <div>
                     <Box variant="awsui-key-label">Item Id</Box>
-                    <div>{item?.itemId ?? "loading..."}</div>
+                    <div>{item?.Name ?? "loading..."}</div>
                   </div>
                   <div>
                     <Box variant="awsui-key-label">Engine</Box>
