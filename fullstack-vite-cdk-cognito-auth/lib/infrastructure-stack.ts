@@ -28,7 +28,6 @@ export class InfrastructureStack extends cdk.Stack {
     const buildPath = path.join(appPath, "dist");
 
     const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
-      bucketName: "gray-emx-poc",
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       autoDeleteObjects: true,
