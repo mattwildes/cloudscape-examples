@@ -29,6 +29,7 @@ export default function App() {
               <Route path="" element={<AllItemsPage />} />
               <Route path="add" element={<AddItemPage />} />
               <Route path="items/:itemId" element={<ViewItemPage />} />
+              <Route path="flows/:Name" element={<ViewItemPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
